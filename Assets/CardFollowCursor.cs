@@ -5,11 +5,13 @@ using UnityEngine;
 public class CardFollowCursor : MonoBehaviour
 {
     public LayerMask floorLayer; // layer containing the floor object
+    // public LayerMask cursorLayer; // layer containing the cursor object
     public float raycastDistance = 100f; // maximum distance of the raycast
     public float smoothTime = 0.01f; // how quickly to move towards the target position
 
     private Vector3 targetPosition;
     private Vector3 currentVelocity;
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,11 +24,13 @@ public class CardFollowCursor : MonoBehaviour
         // create a ray from the floor to the cursor position
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        // check if the ray hits the floor layer
-        if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance, floorLayer))
+        // check if the ray hits the floor layer, but ignore hits with this game object
+        if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance, floorLayer) && hit.transform != transform)
         {
             // set the target position to the hit point on the floor
             targetPosition = hit.point;
+
+           
         }
 
         // smoothly move towards the target position
