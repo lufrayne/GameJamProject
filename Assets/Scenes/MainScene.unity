@@ -464,13 +464,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 572040272}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 395b5199d5f6bd944988e6f7360e1c54, type: 3}
+  m_Script: {fileID: 11500000, guid: 77521c27762e2b54283fc85e926e4311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floorLayer:
-    serializedVersion: 2
-    m_Bits: 1
-  raycastDistance: 100
 --- !u!1 &643537782
 GameObject:
   m_ObjectHideFlags: 0
