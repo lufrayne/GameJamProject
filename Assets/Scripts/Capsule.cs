@@ -7,10 +7,10 @@ public class Capsule : MonoBehaviour
     public float speed = 10.0f;  // The movement speed of the player
 
     // Start is called before the first frame update
-    void Start()
-    {
+    //void Start()
+    //{
 
-    }
+    //}
 
     // Update is called once per frame
     void Update()
@@ -24,6 +24,6 @@ public class Capsule : MonoBehaviour
         direction = transform.TransformDirection(direction);
 
         // Move the player in the calculated direction
-        transform.position += direction * speed * Time.deltaTime;
+        transform.position += speed * Time.deltaTime * direction;
     }
 }
