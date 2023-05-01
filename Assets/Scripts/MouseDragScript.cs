@@ -5,6 +5,8 @@ using UnityEngine;
 public class MouseDragScript : MonoBehaviour
 {
     // Start is called before the first frame update
+    private GameObject groundPlane;
+    private GameObject cardBeam;
     private Vector3 offset;
     private bool isDragging = false;
     private bool isFallingTx = false;
@@ -13,10 +15,9 @@ public class MouseDragScript : MonoBehaviour
     private bool isFallingR = false;
     private float movingRate = .05f;
     private float fallingRateT = .04f;
-    private float fallingRateR = .03f;
+    private float fallingRateR = .04f;
     private float fallStepMinT = 1f;
     private float fallStepMinR = 1f;
-    private GameObject groundPlane;
     private Ray ray;
     private RaycastHit hit;
     private Plane ground;
@@ -35,6 +36,8 @@ public class MouseDragScript : MonoBehaviour
     {
         groundPlane = GameObject.Find("Ground Plane");
         ground = new Plane(Vector3.up, groundPlane.transform.position);
+
+        cardBeam = GameObject.Find("CardBeam");
     }
 
     // Update is called once per frame
@@ -67,6 +70,7 @@ public class MouseDragScript : MonoBehaviour
                 stepTy = transform.position.y + movingRate * (targetTy - transform.position.y);
                 stepTz = transform.position.z + movingRate * (targetTz - transform.position.z);
                 transform.position = new Vector3(stepTx, stepTy, stepTz);
+                cardBeam.transform.position = new Vector3(stepTx, cardBeam.transform.position.y, stepTz);
             }
         }
 
@@ -86,7 +90,7 @@ public class MouseDragScript : MonoBehaviour
         {
             // Gradually move down
             targetTx = hitPoint.x + offset.x;
-            targetTy = groundPlane.transform.position.y + 1;
+            targetTy = groundPlane.transform.position.y + .5f;
             targetTz = hitPoint.z + offset.z;
             stepTx = transform.position.x + fallingRateT * (targetTx - transform.position.x);
             stepTy = transform.position.y + fallingRateT * (targetTy - transform.position.y);
@@ -107,6 +111,7 @@ public class MouseDragScript : MonoBehaviour
                 isFallingTz = false;
             }
             transform.position = new Vector3(stepTx, stepTy, stepTz);
+            cardBeam.transform.position = new Vector3(stepTx, stepTy-10, stepTz);
 
             // Gradually rotate flat
             targetR = Quaternion.Euler(0, -180, 0);
