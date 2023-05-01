@@ -16,8 +16,8 @@ public class MouseDragScript : MonoBehaviour
     private float movingRate = .05f;
     private float fallingRateT = .04f;
     private float fallingRateR = .04f;
-    private float fallStepMinT = 1f;
-    private float fallStepMinR = 1f;
+    private float fallStepMinT = .05f;
+    private float fallStepMinR = .05f;
     private Ray ray;
     private RaycastHit hit;
     private Plane ground;
@@ -90,7 +90,7 @@ public class MouseDragScript : MonoBehaviour
         {
             // Gradually move down
             targetTx = hitPoint.x + offset.x;
-            targetTy = groundPlane.transform.position.y + .5f;
+            targetTy = groundPlane.transform.position.y + fallStepMinT;
             targetTz = hitPoint.z + offset.z;
             stepTx = transform.position.x + fallingRateT * (targetTx - transform.position.x);
             stepTy = transform.position.y + fallingRateT * (targetTy - transform.position.y);
