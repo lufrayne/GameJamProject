@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7022835785652353653
+--- !u!1 &5834537775280465163
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,12 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7022835785652353649}
-  - component: {fileID: 7022835785652353654}
-  - component: {fileID: 7022835785652353655}
-  - component: {fileID: 7022835785652353652}
-  - component: {fileID: 7022835785652353648}
-  - component: {fileID: 7022835785652353651}
+  - component: {fileID: 5834537775280465167}
+  - component: {fileID: 5834537775280465160}
+  - component: {fileID: 5834537775280465161}
+  - component: {fileID: 5834537775280465162}
+  - component: {fileID: 5834537775280465166}
+  - component: {fileID: 5834537775280465165}
   m_Layer: 0
   m_Name: Card
   m_TagString: Untagged
@@ -21,36 +21,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7022835785652353649
+--- !u!4 &5834537775280465167
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7022835785652353653}
+  m_GameObject: {fileID: 5834537775280465163}
   m_LocalRotation: {x: 0, y: -0.9063079, z: 0.42261827, w: 0}
-  m_LocalPosition: {x: -0.13, y: 9.75, z: -59.75}
+  m_LocalPosition: {x: -7.79, y: 9.75, z: -59.75}
   m_LocalScale: {x: 0.12510112, y: 0.18032593, z: 0.18032593}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -180, z: 0}
---- !u!33 &7022835785652353654
+--- !u!33 &5834537775280465160
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7022835785652353653}
+  m_GameObject: {fileID: 5834537775280465163}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &7022835785652353655
+--- !u!23 &5834537775280465161
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7022835785652353653}
+  m_GameObject: {fileID: 5834537775280465163}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -86,13 +86,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7022835785652353652
+--- !u!64 &5834537775280465162
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7022835785652353653}
+  m_GameObject: {fileID: 5834537775280465163}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -100,13 +100,13 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &7022835785652353648
+--- !u!114 &5834537775280465166
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7022835785652353653}
+  m_GameObject: {fileID: 5834537775280465163}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77521c27762e2b54283fc85e926e4311, type: 3}
@@ -116,16 +116,16 @@ MonoBehaviour:
   fallingRateDown: 0.2
   fallingRateSliding: 0.075
   fallingRateRotating: 0.125
-  audioSource: {fileID: 7022835785652353651}
+  audioSource: {fileID: 5834537775280465165}
   cardPickupSound: {fileID: 8300000, guid: 5f8b32a4220cb1143a04a4781606823b, type: 3}
   cardDropSound: {fileID: 8300000, guid: 2f01478e5da04d7488229ed27a36b8c8, type: 3}
---- !u!82 &7022835785652353651
+--- !u!82 &5834537775280465165
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7022835785652353653}
+  m_GameObject: {fileID: 5834537775280465163}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}

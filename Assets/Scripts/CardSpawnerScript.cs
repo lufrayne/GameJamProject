@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class CardSpawnerScript : MonoBehaviour
 {
+    // Public fields
     public GameObject cardToSpawn;
     public float speed = 5f;
     public float spawnInterval = 5f;
 
-
+    // Private variables
     private GameObject spawnedCard;
-    private bool isMoving = true;
+    private MouseDragScript mouseDragScript;
     private float timer = 0f;
 
 
@@ -23,12 +24,12 @@ public class CardSpawnerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isMoving)
+        // Move the spawned prefab across the screen
+        if (spawnedCard != null)
         {
-            // Move the spawned prefab across the screen
-            if (spawnedCard != null)
+            if (!mouseDragScript.isDragging && !mouseDragScript.isOverGround)
             {
-                spawnedCard.transform.Translate(Vector3.right * speed * Time.deltaTime);
+                spawnedCard.transform.Translate(speed * Time.deltaTime * Vector3.left);
             }
         }
 
@@ -41,10 +42,11 @@ public class CardSpawnerScript : MonoBehaviour
         }
     }
 
-    public void SpawnCard()
+    void SpawnCard()
     {
         // Spawn the card from the current game object
-        spawnedCard = Instantiate(cardToSpawn, transform.position, Quaternion.identity);
+        spawnedCard = Instantiate(cardToSpawn);
+        mouseDragScript = spawnedCard.GetComponent<MouseDragScript>();
     }
 }
 

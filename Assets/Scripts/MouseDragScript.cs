@@ -40,14 +40,14 @@ public class MouseDragScript : MonoBehaviour
     private float stepBeamTy;
     private Quaternion stepR;
 
-    private bool isDragging = false;
-    private bool isOverGround = false;
+    public bool isDragging = false;
+    public bool isOverGround = false;
     private bool isFallingTx = false;
     private bool isFallingTy = false;
     private bool isFallingTz = false;
     private bool isFallingR = false;
     private bool isPlayingAudio = false;
-    private bool hasLanded = true;
+    public bool hasLanded = true;
 
     // Start is called before the first frame update
     void Start()
@@ -89,8 +89,8 @@ public class MouseDragScript : MonoBehaviour
             {
                 if (hit.transform == transform)
                 {
-                    offset = transform.position - hit.point;
                     isDragging = true;
+                    offset = transform.position - hit.point;
 
                     // Set the flag to indicate that we're playing audio
                     isPlayingAudio = true;
