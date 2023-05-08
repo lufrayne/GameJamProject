@@ -6,9 +6,13 @@ public class CardSpawnerScript : MonoBehaviour
 {
     public GameObject cardToSpawn;
     public float speed = 5f;
+    public float spawnInterval = 5f;
+
 
     private GameObject spawnedCard;
     private bool isMoving = true;
+    private float timer = 0f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -19,19 +23,6 @@ public class CardSpawnerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && spawnedCard != null)
-        {
-            // Check if the left mouse button is pressed on the spawned prefab
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit) && hit.collider.gameObject == spawnedCard)
-            {
-                // Left mouse button pressed on the spawned prefab, end the script
-                isMoving = false;
-                return;
-            }
-        }
-
         if (isMoving)
         {
             // Move the spawned prefab across the screen
@@ -39,6 +30,14 @@ public class CardSpawnerScript : MonoBehaviour
             {
                 spawnedCard.transform.Translate(Vector3.right * speed * Time.deltaTime);
             }
+        }
+
+        // Check if it's time to spawn a new prefab
+        timer += Time.deltaTime;
+        if (timer >= spawnInterval)
+        {
+            SpawnCard();
+            timer = 0f;
         }
     }
 
