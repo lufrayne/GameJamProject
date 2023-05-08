@@ -23,11 +23,19 @@ public class Chase : MonoBehaviour
     private GameObject chaser8;
     private GameObject chaser9;
     private List<GameObject> chaserList;
+    private GameObject cylinder1;
+    private GameObject cylinder2;
+    private GameObject cylinder3;
+    private GameObject cylinder4;
+    private GameObject cylinder5;
+    private GameObject cylinder6;
+    private List<GameObject> cylinderList;
 
     // Start is called before the first frame update
     void Start()
     {
         runner = GameObject.Find("Runner");
+
         chaser1 = GameObject.Find("Chaser 1");
         chaser2 = GameObject.Find("Chaser 2");
         chaser3 = GameObject.Find("Chaser 3");
@@ -38,6 +46,14 @@ public class Chase : MonoBehaviour
         chaser8 = GameObject.Find("Chaser 8");
         chaser9 = GameObject.Find("Chaser 9");
         chaserList = new List<GameObject> { chaser1, chaser2, chaser3, chaser4, chaser5, chaser6, chaser7, chaser8, chaser9 };
+
+        cylinder1 = GameObject.Find("Cylinder 1");
+        cylinder2 = GameObject.Find("Cylinder 2");
+        cylinder3 = GameObject.Find("Cylinder 3");
+        cylinder4 = GameObject.Find("Cylinder 4");
+        cylinder5 = GameObject.Find("Cylinder 5");
+        cylinder6 = GameObject.Find("Cylinder 6");
+        cylinderList = new List<GameObject> { cylinder1, cylinder2, cylinder3, cylinder4, cylinder5, cylinder6 };
     }
 
     // Update is called once per frame
@@ -61,6 +77,20 @@ public class Chase : MonoBehaviour
             if (distanceToChaser < avoidChaserDistance)
             {
                 Vector3 avoidanceDirection = (transform.position - chaser.transform.position).normalized;
+                Vector3 avoidanceVelocity = avoidanceDirection * avoidanceForce;
+
+                transform.position += avoidanceVelocity * Time.deltaTime;
+                avoid = true;
+            }
+        }
+
+        foreach (GameObject cylinder in cylinderList)
+        {
+            Vector3 directionToChaser = (cylinder.transform.position - transform.position);
+            float distanceToChaser = directionToChaser.magnitude;
+            if (distanceToChaser < avoidChaserDistance)
+            {
+                Vector3 avoidanceDirection = (transform.position - cylinder.transform.position).normalized;
                 Vector3 avoidanceVelocity = avoidanceDirection * avoidanceForce;
 
                 transform.position += avoidanceVelocity * Time.deltaTime;
