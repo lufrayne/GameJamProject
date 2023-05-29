@@ -70,6 +70,7 @@ public class Chase : MonoBehaviour
         bool avoid = false;
         foreach (GameObject chaser in chaserList)
         {
+            if (chaser == null) continue;
             if (name == chaser.name) continue;
 
             Vector3 directionToChaser = (chaser.transform.position - transform.position);

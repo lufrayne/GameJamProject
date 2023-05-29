@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 5834537775280465167}
   - component: {fileID: 5834537775280465160}
   - component: {fileID: 5834537775280465161}
-  - component: {fileID: 5834537775280465162}
-  - component: {fileID: 5834537775280465166}
   - component: {fileID: 5834537775280465165}
-  m_Layer: 0
+  - component: {fileID: 5021829922072708999}
+  - component: {fileID: -1107969803725928299}
+  - component: {fileID: 5834537775280465166}
+  m_Layer: 9
   m_Name: Card
-  m_TagString: Untagged
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,39 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5834537775280465162
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5834537775280465163}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &5834537775280465166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5834537775280465163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77521c27762e2b54283fc85e926e4311, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dragFollowingRate: 0.05
-  fallingRateDown: 0.2
-  fallingRateSliding: 0.075
-  fallingRateRotating: 0.125
-  audioSource: {fileID: 5834537775280465165}
-  cardPickupSound: {fileID: 8300000, guid: 5f8b32a4220cb1143a04a4781606823b, type: 3}
-  cardDropSound: {fileID: 8300000, guid: 2f01478e5da04d7488229ed27a36b8c8, type: 3}
 --- !u!82 &5834537775280465165
 AudioSource:
   m_ObjectHideFlags: 0
@@ -215,3 +183,50 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &5021829922072708999
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5834537775280465163}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 24, y: 10, z: 22}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-1107969803725928299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5834537775280465163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c0c82ba7960dd243bf6d6b65abf198e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5834537775280465166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5834537775280465163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77521c27762e2b54283fc85e926e4311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragFollowingRate: 0.05
+  fallingRateDown: 0.2
+  fallingRateSliding: 0.075
+  fallingRateRotating: 0.125
+  audioSource: {fileID: 5834537775280465165}
+  cardPickupSound: {fileID: 8300000, guid: 5f8b32a4220cb1143a04a4781606823b, type: 3}
+  cardDropSound: {fileID: 8300000, guid: 2f01478e5da04d7488229ed27a36b8c8, type: 3}
+  isDragging: 0
+  isOverGround: 0
+  hasLanded: 1

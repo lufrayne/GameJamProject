@@ -14,15 +14,8 @@ public class CardSpawnerScript : MonoBehaviour
     private MouseDragScript mouseDragScript;
     private float timer = 0f;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         // Move the spawned prefab across the screen
         if (spawnedCard != null)
@@ -37,12 +30,16 @@ public class CardSpawnerScript : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= spawnInterval)
         {
+            if (spawnedCard != null)
+            {
+                Destroy(spawnedCard);
+            }
             SpawnCard();
             timer = 0f;
         }
     }
 
-    void SpawnCard()
+    private void SpawnCard()
     {
         // Spawn the card from the current game object
         spawnedCard = Instantiate(cardToSpawn);

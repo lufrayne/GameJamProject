@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7700802638062065926}
   - component: {fileID: 8979165194406722418}
   - component: {fileID: 6131528856641877480}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,10 +92,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3561982016850158812}
+  - component: {fileID: 1515584521255930972}
+  - component: {fileID: 2970393175463172384}
   - component: {fileID: 462439264046680777}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chaser
-  m_TagString: Untagged
+  m_TagString: Chaser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,7 +110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4189864331768151654}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -54.2, y: -0.0000019073486, z: 14.1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.6541, y: 1.6541, z: 1.6541}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -118,6 +120,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1515584521255930972
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4189864331768151654}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &2970393175463172384
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4189864331768151654}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 3.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.6, z: 0}
 --- !u!114 &462439264046680777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,6 +162,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655114df2d7396a45b7166a8ba32f1fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minSpeed: 5
+  maxSpeed: 12
+  avoidChaserDistance: 5
+  avoidRunnerDistance: 2
+  avoidanceForce: 20
 --- !u!1 &5132116231069703329
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +178,7 @@ GameObject:
   - component: {fileID: 4697029630508144081}
   - component: {fileID: 6735221918631555666}
   - component: {fileID: 7010000393581897293}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +261,7 @@ GameObject:
   - component: {fileID: 55186336940754273}
   - component: {fileID: 7336330696892723836}
   - component: {fileID: 1441919522185535278}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Turtle Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -177,7 +177,7 @@ public class MouseDragScript : MonoBehaviour
             {
                 if (!isOverGround)
                 {
-                    // Gradually move to the table
+                    // Gradually move down to the table
                     targetTx = hit.point.x;
                     targetTy = startingY;
                     targetTz = startingZ;
@@ -227,7 +227,7 @@ public class MouseDragScript : MonoBehaviour
                 }
                 else
                 {
-                    // Gradually move down
+                    // Gradually move down to the ground
                     targetTx = hitPoint.x + offset.x;
                     targetTy = groundObj.transform.position.y + fallingRateDown;
                     targetTz = hitPoint.z + offset.z;
@@ -272,6 +272,11 @@ public class MouseDragScript : MonoBehaviour
                         isPlayingAudio = true;
                         StartCoroutine(PlayAudioWithDelayCoroutine(cardDropSound, 0f));
                         hasLanded = true;
+                    }
+
+                    if (hasLanded)
+                    {
+                        //Destroy(gameObject);
                     }
                 }
             }
