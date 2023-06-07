@@ -54,7 +54,7 @@ public class Chase : MonoBehaviour
         foreach (GameObject chaser in chasers)
         {
             if (chaser == null) continue;
-            if (tag == chaser.tag) continue;
+            if ((tag == chaser.tag) && chaser.name.Contains("Clone")) continue;
 
             Vector3 directionToChaser = (chaser.transform.position - transform.position);
             float distanceToChaser = directionToChaser.magnitude;
