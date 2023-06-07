@@ -208,6 +208,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c0c82ba7960dd243bf6d6b65abf198e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerDistance: 5
+  floorPlane: {fileID: 0}
 --- !u!114 &5834537775280465166
 MonoBehaviour:
   m_ObjectHideFlags: 0

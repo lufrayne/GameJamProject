@@ -13,15 +13,7 @@ public class Chase : MonoBehaviour
 
     // Private variables
     private GameObject runner;
-    private GameObject chaser1;
-    private GameObject chaser2;
-    private GameObject chaser3;
-    private GameObject chaser4;
-    private GameObject chaser5;
-    private GameObject chaser6;
-    private GameObject chaser7;
-    private GameObject chaser8;
-    private GameObject chaser9;
+    private GameObject[] chasers;
     private List<GameObject> chaserList;
     private GameObject cylinder1;
     private GameObject cylinder2;
@@ -36,24 +28,15 @@ public class Chase : MonoBehaviour
     {
         runner = GameObject.Find("Runner");
 
-        chaser1 = GameObject.Find("Chaser 1");
-        chaser2 = GameObject.Find("Chaser 2");
-        chaser3 = GameObject.Find("Chaser 3");
-        chaser4 = GameObject.Find("Chaser 4");
-        chaser5 = GameObject.Find("Chaser 5");
-        chaser6 = GameObject.Find("Chaser 6");
-        chaser7 = GameObject.Find("Chaser 7");
-        chaser8 = GameObject.Find("Chaser 8");
-        chaser9 = GameObject.Find("Chaser 9");
-        chaserList = new List<GameObject> { chaser1, chaser2, chaser3, chaser4, chaser5, chaser6, chaser7, chaser8, chaser9 };
-
+        chasers = GameObject.FindGameObjectsWithTag("Chaser");  
+    
         cylinder1 = GameObject.Find("Cylinder 1");
         cylinder2 = GameObject.Find("Cylinder 2");
         cylinder3 = GameObject.Find("Cylinder 3");
         cylinder4 = GameObject.Find("Cylinder 4");
         cylinder5 = GameObject.Find("Cylinder 5");
         cylinder6 = GameObject.Find("Cylinder 6");
-        cylinderList = new List<GameObject> { cylinder1, cylinder2, cylinder3, cylinder4, cylinder5, cylinder6 };
+        cylinderList = new List<GameObject> { cylinder1, cylinder2, cylinder3, cylinder4, cylinder5, cylinder6 }; 
     }
 
     // Update is called once per frame
@@ -68,10 +51,10 @@ public class Chase : MonoBehaviour
         Vector3 desiredVelocity = desiredDirection * Random.Range(minSpeed, maxSpeed);
 
         bool avoid = false;
-        foreach (GameObject chaser in chaserList)
+        foreach (GameObject chaser in chasers)
         {
             if (chaser == null) continue;
-            if (name == chaser.name) continue;
+            if (tag == chaser.tag) continue;
 
             Vector3 directionToChaser = (chaser.transform.position - transform.position);
             float distanceToChaser = directionToChaser.magnitude;

@@ -6,7 +6,7 @@ public class CardCollision : MonoBehaviour
 {
     private GameObject logicManagerInstance;
     private LogicScript logicScriptInstance;
-    
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +14,9 @@ public class CardCollision : MonoBehaviour
 
         logicManagerInstance = GameObject.Find("LogicManager");
         logicScriptInstance = logicManagerInstance.GetComponent<LogicScript>();
+   
     }
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -28,4 +30,5 @@ public class CardCollision : MonoBehaviour
             logicScriptInstance.addScore();
         }
     }
+   
 }
