@@ -8,13 +8,15 @@ public class ChaserSpawnScript : MonoBehaviour
     public Transform spawnPlane;
     public float spawnRadius = 5f;
     public float spawnInterval = 2f;
+    public int numberOfObjects;
 
     private float timer = 0f;
+    private int counter = 0; 
 
     // Start is called before the first frame update
     void Start()
     {
-            
+       
     }
 
     // Update is called once per frame
@@ -31,10 +33,17 @@ public class ChaserSpawnScript : MonoBehaviour
 
     private void SpawnObject()
     {
-        Vector3 randomPoint = GetRandomPointOnPlane();
-        GameObject spawnedObject = Instantiate(chaserToSpawn, randomPoint, Quaternion.identity);
-        // You can customize the spawned object's properties or add additional components here
+            Vector3 randomPoint = GetRandomPointOnPlane();
+            GameObject spawnedChaser = Instantiate(chaserToSpawn, randomPoint, Quaternion.identity);
+
+            // Rename the object to make it unique
+            counter++;
+            spawnedChaser.name = chaserToSpawn.name + "_" + counter;
+        
     }
+
+
+   
 
     private Vector3 GetRandomPointOnPlane()
     {
