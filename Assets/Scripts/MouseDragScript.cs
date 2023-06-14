@@ -47,7 +47,7 @@ public class MouseDragScript : MonoBehaviour
     private bool isFallingTz = false;
     private bool isFallingR = false;
     private bool isPlayingAudio = false;
-    public bool hasLanded = true;
+    public bool hasLanded = false;
 
     // Start is called before the first frame update
     void Start()
@@ -276,7 +276,7 @@ public class MouseDragScript : MonoBehaviour
 
                     if (hasLanded)
                     {
-                        //Destroy(gameObject);
+                       //Destroy(gameObject);
                     }
                 }
             }

@@ -6,6 +6,9 @@ public class CardCollision : MonoBehaviour
 {
     private GameObject logicManagerInstance;
     private LogicScript logicScriptInstance;
+    private GameObject spawnedPillar;
+
+    public GameObject pillarToSpawn; 
   
     // Start is called before the first frame update
     void Start()
@@ -30,5 +33,5 @@ public class CardCollision : MonoBehaviour
             logicScriptInstance.addScore();
         }
     }
-   
+
 }
