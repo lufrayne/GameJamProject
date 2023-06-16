@@ -2062,8 +2062,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 515919627a3d4a44882ec90a60838068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardToSpawn: {fileID: 5834537775280465163, guid: 62da52b0d0c699b41b59ff5050b94792,
-    type: 3}
+  cardList:
+  - {fileID: 5834537775280465163, guid: 509b5c1d8540d444db79e1355bf90a5e, type: 3}
   speed: 5
   spawnInterval: 5
 --- !u!4 &1952941348

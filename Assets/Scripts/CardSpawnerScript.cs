@@ -5,8 +5,8 @@ using UnityEngine;
 public class CardSpawnerScript : MonoBehaviour
 {
     // Public fields
-    public GameObject cardToSpawn;
-    public float speed = 5f;
+    public GameObject[] cardList;
+    public float speed = 5f;    
     public float spawnInterval = 5f;
 
     // Private variables
@@ -41,8 +41,12 @@ public class CardSpawnerScript : MonoBehaviour
 
     private void SpawnCard()
     {
-        // Spawn the card from the current game object
-        spawnedCard = Instantiate(cardToSpawn);
+        // Randomly select a card prefab from the array/list
+        int randomIndex = Random.Range(0, cardList.Length);
+        GameObject cardPrefab = cardList[randomIndex];
+
+        // Spawn the randomly selected card prefab
+        spawnedCard = Instantiate(cardPrefab);
         mouseDragScript = spawnedCard.GetComponent<MouseDragScript>();
     }
 }
