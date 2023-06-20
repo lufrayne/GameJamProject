@@ -23,12 +23,13 @@ public class Chase : MonoBehaviour
     {
         runner = GameObject.Find("Runner");
         chasers = GameObject.FindGameObjectsWithTag("Chaser");
-        pillars = GameObject.FindGameObjectsWithTag("Pillar");
     }
 
     // Update is called once per frame
     void Update()
     {
+        pillars = GameObject.FindGameObjectsWithTag("Pillar");
+
         // Chase the runner, avoid collisions, but don't move up or down
         float startingTy = transform.position.y;
 
