@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 100927190}
   m_Layer: 0
   m_Name: Cylinder 3
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 217889009}
   m_Layer: 0
   m_Name: Cylinder 5
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -499,7 +499,7 @@ GameObject:
   - component: {fileID: 343009476}
   m_Layer: 0
   m_Name: Cylinder 2
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -851,7 +851,7 @@ GameObject:
   - component: {fileID: 547490221}
   m_Layer: 0
   m_Name: Cylinder 4
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1763,7 +1763,7 @@ GameObject:
   - component: {fileID: 1508467152}
   m_Layer: 0
   m_Name: Cylinder 6
-  m_TagString: Untagged
+  m_TagString: Pillar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2064,6 +2064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardList:
   - {fileID: 5834537775280465163, guid: 509b5c1d8540d444db79e1355bf90a5e, type: 3}
+  - {fileID: 5834537775280465163, guid: 62da52b0d0c699b41b59ff5050b94792, type: 3}
   speed: 5
   spawnInterval: 5
 --- !u!4 &1952941348
@@ -2221,6 +2222,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cylinder 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077032155755278058, guid: 37293fa6d9590eb40bd5ba608d869149,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pillar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37293fa6d9590eb40bd5ba608d869149, type: 3}

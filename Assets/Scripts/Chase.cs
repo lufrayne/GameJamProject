@@ -14,29 +14,16 @@ public class Chase : MonoBehaviour
     // Private variables
     private GameObject runner;
     private GameObject[] chasers;
+    private GameObject[] pillars;
     private List<GameObject> chaserList;
-    private GameObject cylinder1;
-    private GameObject cylinder2;
-    private GameObject cylinder3;
-    private GameObject cylinder4;
-    private GameObject cylinder5;
-    private GameObject cylinder6;
-    private List<GameObject> cylinderList;
+    private List<GameObject> pillarList;
 
     // Start is called before the first frame update
     void Start()
     {
         runner = GameObject.Find("Runner");
-
-        chasers = GameObject.FindGameObjectsWithTag("Chaser");  
-    
-        cylinder1 = GameObject.Find("Cylinder 1");
-        cylinder2 = GameObject.Find("Cylinder 2");
-        cylinder3 = GameObject.Find("Cylinder 3");
-        cylinder4 = GameObject.Find("Cylinder 4");
-        cylinder5 = GameObject.Find("Cylinder 5");
-        cylinder6 = GameObject.Find("Cylinder 6");
-        cylinderList = new List<GameObject> { cylinder1, cylinder2, cylinder3, cylinder4, cylinder5, cylinder6 }; 
+        chasers = GameObject.FindGameObjectsWithTag("Chaser");
+        pillars = GameObject.FindGameObjectsWithTag("Pillar");
     }
 
     // Update is called once per frame
@@ -68,13 +55,13 @@ public class Chase : MonoBehaviour
             }
         }
 
-        foreach (GameObject cylinder in cylinderList)
+        foreach (GameObject pillar in pillars)
         {
-            Vector3 directionToChaser = (cylinder.transform.position - transform.position);
+            Vector3 directionToChaser = (pillar.transform.position - transform.position);
             float distanceToChaser = directionToChaser.magnitude;
             if (distanceToChaser < avoidChaserDistance)
             {
-                Vector3 avoidanceDirection = (transform.position - cylinder.transform.position).normalized;
+                Vector3 avoidanceDirection = (transform.position - pillar.transform.position).normalized;
                 Vector3 avoidanceVelocity = avoidanceDirection * avoidanceForce;
 
                 transform.position += avoidanceVelocity * Time.deltaTime;
