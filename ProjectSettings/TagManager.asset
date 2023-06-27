@@ -8,6 +8,9 @@ TagManager:
   - Card
   - Ground
   - Pillar
+  - ChaserSpawner
+  - CardSpawner
+  - Runner
   layers:
   - Default
   - TransparentFX

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Capsule : MonoBehaviour
+public class RunnerScript : MonoBehaviour
 {
     public float speed = 10.0f;  // The movement speed of the player
     private LogicScript logicScriptInstance;
@@ -31,9 +31,9 @@ public class Capsule : MonoBehaviour
         }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Runner collided with chaser");
+        Debug.Log("Runner collided with something");
         // Check if the collision involves the other object type
-       if (other.gameObject.CompareTag("Chaser"))
+        if (other.gameObject.CompareTag("Chaser"))
        {
         Debug.Log("Runner collided with chaser");
             logicScriptInstance.gameOver();

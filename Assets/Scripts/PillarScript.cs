@@ -9,7 +9,7 @@ public class PillarScript : MonoBehaviour
 
     private GameObject spawnedPillar;
     private MouseDragScript mouseDragScriptInstance;
-    private bool pillarHasSpawned = false;
+    // private bool pillarHasSpawned = false;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +30,7 @@ public class PillarScript : MonoBehaviour
             Debug.Log("Spawning pillar...");
             spawnedPillar = Instantiate(pillarToSpawn);
             spawnedPillar.transform.position = transform.position;
-            pillarHasSpawned = true;
+            // pillarHasSpawned = true;
             Destroy(gameObject);
         }
 
