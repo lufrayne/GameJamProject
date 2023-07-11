@@ -38,5 +38,26 @@ public class RunnerScript : MonoBehaviour
         Debug.Log("Runner collided with chaser");
             logicScriptInstance.gameOver();
        }
+        if (other.CompareTag("Pillar"))
+        {
+            Debug.Log("Runner collided with pillar");   
+            // Calculate the separation distance required to prevent overlap
+            float separationDistance = CalculateSeparationDistance(other);
+
+            // Separate the objects by moving them along the collision normal
+            transform.position += transform.forward * separationDistance;
+        }
+    }
+
+    private float CalculateSeparationDistance(Collider other)
+    {
+        // Calculate the bounds of the colliders
+        Bounds bounds = GetComponent<Collider>().bounds;
+        Bounds otherBounds = other.bounds;
+
+        // Calculate the minimum separation distance needed
+        float separationDistance = Mathf.Abs(bounds.min.z - otherBounds.max.z);
+
+        return separationDistance;
     }
 }
